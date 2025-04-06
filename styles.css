@@ -1,45 +1,65 @@
-/* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: #0f172a;
+    background: linear-gradient(to right, #0f172a, #1e293b);
     color: #fff;
     text-align: center;
+    min-height: 100vh;
+}
+
+/* Glass Effect Container */
+.glass-container {
+    margin: 40px auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 header {
-    background: #1e293b;
+    background: transparent;
     padding: 20px;
 }
 
-h1 {
-    margin: 0;
-    font-size: 2.5em;
-    font-weight: 600;
+header h1 {
+    font-size: 3em;
+    color: #facc15;
+    margin-bottom: 0;
+    animation: fadeIn 1s ease-in-out;
 }
 
-p {
+header p {
     font-size: 1.2em;
+    margin-top: 0;
+    color: #cbd5e1;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
 }
 
 nav ul li a {
     color: #61dafb;
     text-decoration: none;
-    font-size: 1.2em;
-    transition: 0.3s;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -48,30 +68,53 @@ nav ul li a:hover {
 
 /* Intro Section */
 .intro {
-    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    gap: 20px;
     padding: 20px;
 }
 
 .intro img {
-    width: 250px;  
-    height: 300px;  
-    border-radius: 10px;  
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
     border: 5px solid #61dafb;
+    box-shadow: 0 0 15px rgba(97, 218, 251, 0.4);
+}
+
+.intro-text h2 {
+    font-size: 2em;
+    color: #facc15;
+}
+
+.intro-text p {
+    font-size: 1.1em;
+    color: #e2e8f0;
+    max-width: 600px;
+    margin: auto;
 }
 
 /* Button Styles */
 button {
     background: #facc15;
     color: #0f172a;
-    padding: 10px 20px;
-    font-size: 1.2em;
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: bold;
     border: none;
+    border-radius: 8px;
     cursor: pointer;
     margin-top: 20px;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
     background: #61dafb;
+    transform: scale(1.05);
+    color: #0f172a;
 }
 
 /* Projects Section */
@@ -84,7 +127,7 @@ button:hover {
 }
 
 .project {
-    width: 300px; 
+    width: 300px;
     background: #1e293b;
     padding: 15px;
     border-radius: 10px;
@@ -92,8 +135,8 @@ button:hover {
 }
 
 .project img {
-    width: 100%; 
-    height: 200px; 
+    width: 100%;
+    height: 200px;
     object-fit: cover;
     border-radius: 10px;
     border: 3px solid #61dafb;
@@ -102,46 +145,6 @@ button:hover {
 /* Skills Section */
 .skills-container {
     margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-}
-
-.skill {
-    width: 150px;
-    background: #1e293b;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.skill:hover {
-    transform: scale(1.1);
-}
-
-.skill img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
-
-.skill p {
-    font-size: 1.2em;
-    color: #facc15;
-}
-
-/* Footer */
-footer {
-    background: #1e293b;
-    padding: 20px;
-    margin-top: 40px;
-}
-/* Skills Section */
-.skills-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -171,5 +174,57 @@ footer {
 
 .skill p {
     font-size: 1.2em;
+    color: #facc15;
+}
+
+/* Footer */
+footer {
+    background: transparent;
+    padding: 20px;
+    margin-top: 50px;
+    font-size: 0.9em;
+    color: #94a3b8;
+    border-top: 1px solid #334155;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+}
+
+.delay {
+    animation-delay: 0.5s;
+}
+.certifications {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+.certification {
+    background: #1e293b;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.certification h2 {
+    margin-bottom: 15px;
     color: #facc15;
 }
